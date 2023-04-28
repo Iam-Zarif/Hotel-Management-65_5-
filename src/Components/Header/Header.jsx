@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProviders';
 
 const Header = () => {
+  const user = useContext(AuthContext)
+  // console.log(user)
     return (
       <div>
         <div className="navbar bg-primary text-primary-content">

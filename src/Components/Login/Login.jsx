@@ -1,13 +1,30 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Form, Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProviders';
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const handleLogin =(e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    signIn(email,password)
+    .then(result =>{
+      const loggedUser = result.user;
+      console.log(loggedUser)
+      form.reset();
+    })
+    .catch(error=>
+      console.log(error))
+
+  }
     return (
       <div className="w-1/3 mx-auto mt-10">
         <p className="text-4xl text-center font-bold">LogIn</p>
         <div className="mt-12 border p-10 rounded-xl ">
-          <Form>
+          <Form onSubmit={handleLogin}>
             <div className="flex flex-col gap-8">
               <input
               required

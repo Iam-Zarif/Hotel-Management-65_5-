@@ -1,9 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, Link } from 'react-router-dom';
 import google from '../../assets/google.png'
+import { AuthContext } from '../Providers/AuthProviders';
+ 
 
 const Register = () => {
+  
+  const { user, createUser } = useContext(AuthContext);
+  console.log(user);
+  console.log(createUser);
     const handleRegister =(e) =>{
         e.preventDefault();
         const form = e.target;
@@ -11,6 +17,14 @@ const Register = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
         console.log(email, password, confirmPassword);
+        createUser(email,password)
+        .then(result =>{
+          const loggedUser = result.user;
+          console.log(loggedUser)
+        })
+        .catch(error =>{
+          console.log(error)
+        })
 
         if(password !== confirmPassword){
             alert("Password didn't matched");

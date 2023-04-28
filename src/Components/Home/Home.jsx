@@ -1,8 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import cover from "../../assets/cover1.jpg";
+import room1 from '../../assets/room1.jpg'
+import room2 from '../../assets/room1.jpg'
+import room3 from '../../assets/room3.jpg'
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Home = () => {
+  const user = useContext(AuthContext);
+  // console.log(user.displayName);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -43,7 +49,9 @@ const Home = () => {
     <div className="">
       <img className="w-screen mx-auto" src={cover} alt="" />
       <div className="mt-16">
-        <p className="text-center font-extrabold text-2xl">The Offer Will over in :</p>
+        <p className="text-center font-extrabold text-2xl">
+          The Offer Will over in :
+        </p>
         <div className="text-center">
           <div className="justify-center mt-10 grid grid-flow-col gap-5 text-center auto-cols-max">
             <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
@@ -69,6 +77,58 @@ const Home = () => {
                 <span style={{ "--value": seconds }}>{seconds}</span>
               </span>
               sec
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-around mt-20">
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <figure className="px-10 pt-10">
+            <img
+              src={room1}
+              alt="Shoes"
+              className="rounded-xl"
+            />
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-actions">
+              <button className="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <figure className="px-10 pt-10">
+            <img
+              src={room2}
+              alt="Shoes"
+              className="rounded-xl"
+            />
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-actions">
+              <button className="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <figure className="px-10 pt-10">
+            <img
+              src={room3}
+              alt="Shoes"
+              className="rounded-xl"
+            />
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title">Shoes!</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-actions">
+              <button className="btn btn-primary">Book Now</button>
             </div>
           </div>
         </div>
