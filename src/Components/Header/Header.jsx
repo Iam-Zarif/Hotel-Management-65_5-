@@ -29,10 +29,10 @@ const Header = () => {
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a>Home</a>
+                  <Link>Home</Link>
                 </li>
                 <li tabIndex={0}>
-                  <a className="justify-between">
+                  <Link className="justify-between">
                     Categories
                     <svg
                       className="fill-current"
@@ -43,27 +43,27 @@ const Header = () => {
                     >
                       <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                     </svg>
-                  </a>
+                  </Link>
                   <ul className="p-2">
                     <li>
-                      <a>Single person</a>
+                      <Link>Single person</Link>
                     </li>
                     <li>
-                      <a>Couple</a>
+                      <Link>Couple</Link>
                     </li>
                     <li>
-                      <a>Family</a>
+                      <Link>Family</Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a>Contact Us</a>
+                  <Link>Contact Us</Link>
                 </li>
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl">
+            <Link className="btn btn-ghost normal-case text-xl">
               Our <span className="text-3xl text-black font-bold">Hotel</span>
-            </a>
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
@@ -71,7 +71,7 @@ const Header = () => {
                 <Link to='/'>Home</Link>
               </li>
               <li tabIndex={0}>
-                <a>
+                <Link>
                   Categories
                   <svg
                     className="fill-current"
@@ -82,21 +82,21 @@ const Header = () => {
                   >
                     <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                   </svg>
-                </a>
+                </Link>
                 <ul className="p-2">
                   <li>
-                    <a>Single person</a>
+                    <Link>Single person</Link>
                   </li>
                   <li>
-                    <a>Couple</a>
+                    <Link>Couple</Link>
                   </li>
                   <li>
-                    <a>Family</a>
+                    <Link>Family</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <a>Contact Us</a>
+                <Link to='/contactUs'>Contact Us</Link>
               </li>
             </ul>
           </div>

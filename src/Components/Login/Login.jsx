@@ -33,7 +33,7 @@ const Login = () => {
             </div>
             <div className="mt-8 text-center">
               New at OurHotel?
-              <Link to="/signUp" className="p-4 hover:bg-slate-700 rounded-xl underline">
+              <Link to="/signUp" className="p-4 hover:bg-slate-700 rounded-xl underline font-bold">
                 Register
               </Link>
             </div>

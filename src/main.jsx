@@ -8,6 +8,7 @@ import Main from './Layout/Main/Main.jsx';
 import Home from './Components/Home/Home.jsx';
 import Login from './Components/Login/Login.jsx';
 import Register from './Components/Register/Register.jsx';
+import ContactUs from './Components/ContactUs/ContactUs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
     children :[
       {path:'/' , element: <Home></Home>},
       {path:'login' , element:<Login></Login>},
-      {path:'signUp' , element:<Register></Register>}
+      {path:'signUp' , element:<Register></Register>},
+      {path:'contactUs' , element:<ContactUs></ContactUs>}
     ]
   },
 ]);
