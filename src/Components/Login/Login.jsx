@@ -10,12 +10,14 @@ const Login = () => {
           <Form>
             <div className="flex flex-col gap-8">
               <input
+              required
                 name="email"
                 type="email"
                 placeholder="Your Email"
                 className="input input-bordered input-info w-96 "
               />
               <input
+              required
                 name="password"
                 type="password"
                 placeholder="Your Password"

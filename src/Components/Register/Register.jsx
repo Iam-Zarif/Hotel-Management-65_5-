@@ -4,26 +4,47 @@ import { Form, Link } from 'react-router-dom';
 import google from '../../assets/google.png'
 
 const Register = () => {
+    const handleRegister =(e) =>{
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+        console.log(email, password, confirmPassword);
+
+        if(password !== confirmPassword){
+            alert("Password didn't matched");
+            return
+        }
+        else if(password.length < 8){
+            alert("Your password should contain at least 8 characters");
+            return
+        }
+        form.reset();
+    }
     return (
       <div>
         <div className="w-1/3 mx-auto mt-10">
           <p className="text-4xl text-center font-bold">SignUp</p>
           <div className="mt-12 border p-10 rounded-xl ">
-            <Form>
+            <Form onSubmit={handleRegister}>
               <div className="flex flex-col gap-8">
                 <input
+                required
                   name="email"
                   type="email"
                   placeholder="Your Email"
                   className="input input-bordered input-info w-96 "
                 />
                 <input
+                required
                   name="password"
                   type="password"
                   placeholder="Your Password"
                   className="input input-bordered input-info w-96 "
                 />
                 <input
+                required
                   name="confirmPassword"
                   type="password"
                   placeholder="Confirm Password"
