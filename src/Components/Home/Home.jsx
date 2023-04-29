@@ -98,7 +98,7 @@ const Home = () => {
               ) : (
                 <div>
                   <Link to="/login" className="btn btn-primary">
-                    Login
+                    Login for Book
                   </Link>
                 </div>
               )}
@@ -122,7 +122,7 @@ const Home = () => {
               ) : (
                 <div>
                   <Link to="/login" className="btn btn-primary">
-                    Login
+                    Login for Book
                   </Link>
                 </div>
               )}
@@ -145,7 +145,7 @@ const Home = () => {
               ) : (
                 <div>
                   <Link to="/login" className="btn btn-primary">
-                    Login
+                    Login for Book
                   </Link>
                 </div>
               )}
