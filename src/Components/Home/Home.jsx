@@ -5,9 +5,10 @@ import room1 from '../../assets/room1.jpg'
 import room2 from '../../assets/room1.jpg'
 import room3 from '../../assets/room3.jpg'
 import { AuthContext } from "../Providers/AuthProviders";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const user = useContext(AuthContext);
+  const {user} = useContext(AuthContext);
   // console.log(user.displayName);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
@@ -84,51 +85,70 @@ const Home = () => {
       <div className="flex justify-around mt-20">
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
-            <img
-              src={room1}
-              alt="Shoes"
-              className="rounded-xl"
-            />
+            <img src={room1} alt="Shoes" className="rounded-xl" />
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions">
-              <button className="btn btn-primary">Book Now</button>
+              {user ? (
+                <div>
+                  <Link className="btn btn-primary">Book Now</Link>
+                </div>
+              ) : (
+                <div>
+                  <Link to="/login" className="btn btn-primary">
+                    Login
+                  </Link>
+                </div>
+              )}
+              {console.log(user)}
             </div>
           </div>
         </div>
 
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
-            <img
-              src={room2}
-              alt="Shoes"
-              className="rounded-xl"
-            />
+            <img src={room2} alt="Shoes" className="rounded-xl" />
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions">
-              <button className="btn btn-primary">Book Now</button>
+              {user ? (
+                <div>
+                  <Link className="btn btn-primary">Book Now</Link>
+                </div>
+              ) : (
+                <div>
+                  <Link to="/login" className="btn btn-primary">
+                    Login
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
-            <img
-              src={room3}
-              alt="Shoes"
-              className="rounded-xl"
-            />
+            <img src={room3} alt="Shoes" className="rounded-xl" />
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Shoes!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions">
-              <button className="btn btn-primary">Book Now</button>
+              {user ? (
+                <div>
+                  <Link className="btn btn-primary">Book Now</Link>
+                </div>
+              ) : (
+                <div>
+                  <Link to="/login" className="btn btn-primary">
+                    Login
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
