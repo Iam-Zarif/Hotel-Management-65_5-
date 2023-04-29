@@ -15,9 +15,12 @@ const Login = () => {
       const loggedUser = result.user;
       console.log(loggedUser)
       form.reset();
+      alert("Good Job Yaaaaaaaaaayyyyyyyyyy")
     })
     .catch(error=>
+      
       console.log(error))
+      
 
   }
     return (

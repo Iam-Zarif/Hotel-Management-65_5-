@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 
 const Header = () => {
-  const user = useContext(AuthContext)
+  const {user} = useContext(AuthContext);
+  console.log(user);
   // console.log(user)
     return (
       <div>
@@ -71,7 +72,7 @@ const Header = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <Link to='/'>Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li tabIndex={0}>
                 <Link>
@@ -99,22 +100,36 @@ const Header = () => {
                 </ul>
               </li>
               <li>
-                <Link to='/contactUs'>Contact Us</Link>
+                <Link to="/contactUs">Contact Us</Link>
               </li>
             </ul>
           </div>
           <div className="navbar-end flex gap-5">
-            <Link to="/login" className="btn">
-              LogIn
-            </Link>
-            <Link to="/signUp" className="btn">
-              Sign Up
-            </Link>
+            {user ? (
+              <div> {user.email}</div>
+            ) : (
+              <div>
+                <Link to="/login" className="btn">
+                  Log In
+                </Link>
+              </div>
+            )}
+            {user ? (
+              <div>
+                <Link className="btn">Log Out</Link>
+              </div>
+            ) : (
+              <div>
+                <Link to="/signUp" className="btn">
+                  Sign Up
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 
         <div>
-            <p></p>
+          <p></p>
         </div>
       </div>
     );
