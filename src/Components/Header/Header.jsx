@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 
 const Header = () => {
-  const {user} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut =()=>{
+   
+logOut()
+.then(()=>{})
+.catch(error => console.log(error))
+  }
   console.log(user);
   // console.log(user)
     return (
@@ -116,7 +122,7 @@ const Header = () => {
             )}
             {user ? (
               <div>
-                <Link className="btn">Log Out</Link>
+                <button onClick={handleLogOut} className="btn">Log Out</button>
               </div>
             ) : (
               <div>

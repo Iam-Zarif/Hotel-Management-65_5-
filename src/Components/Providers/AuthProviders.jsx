@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from '../../Firebase/firebase.config';
 const auth = getAuth(app);
 
@@ -17,8 +17,8 @@ const AuthProviders = ({children}) => {
     const signIn =(email,password) =>{
         return signInWithEmailAndPassword(auth,email,password)
     }
-    const signOut =() =>{
-        signOut()
+    const logOut =() =>{
+       return signOut(auth)
     }
     useEffect(()=>{
 const unsubscribe =  onAuthStateChanged(auth,(currentUser)=>{
@@ -32,7 +32,8 @@ return () =>{
     const authInfo = {
       user,
       createUser,
-      signIn
+      signIn,
+      logOut,
     };
     return (
         <AuthContext.Provider value={authInfo}>
